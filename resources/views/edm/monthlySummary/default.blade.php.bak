@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>Date: {{ $date }}</div>
+    <div>Name: {{ $name }}</div>
+    <div>Current Tier: {{ $currentTier }}</div>
+    <div>Points to Next Tier: {{ $pointsToNextTier }}</div>
+    <div>Next Tier: {{ $nextTier }}</div>
+    <div>Month: {{ $month }}</div>
+    <table>
+        <tr>
+            <th colspan="2">Received</th>
+            <th colspan="2">Shared</th>
+        </tr>
+        @foreach ($badges as $badge)
+        <tr>
+            <td>
+                <div>{{ $badge->image_url }}</div>
+                <div>{{ $badge->name }}</div>
+            </td>
+            <td>{{ $badge->received }}</td>
+            <td>
+                <div>{{ $badge->image_url }}</div>
+                <div>{{ $badge->name }}</div>
+            </td>
+            <td>{{ $badge->sent }}</td>
+        </tr>
+        @endforeach
+    </table>
+    <div>Remaining Black Tokens: {{ $recognizeOthersToken }}</div>
+    <div>Remaining Green Tokens: {{ $myRewardsToken }}</div>
+    <div>Green Tokens Expiration: {{ $myRewardsTokenExpiration }}</div>
+    <div>Black Tokens Used: {{ $recognizeOthersTokenUsed }}</div>
+    <div>Black Token Expiration: {{ $recognizeOthersTokenExpiration }}</div>
+    <div>Green Tokens Used: {{ $myRewardsTokenUsed }}</div>
+    <div>ACE Store Link: {{ $aceStoreLink }}</div>
+    <div>History Link: {{ $historyLink }}</div>
+    <div>Image Folder URL: {{ $imgFolderUrl }}</div>
+</body>
+</html>
